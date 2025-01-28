@@ -40,6 +40,7 @@ Com todo o meu amor,
 Isaque
 `;
 
+
   // Atualiza a cor do fundo
   document.body.style.backgroundColor = "#f5efe6"; // Caramelo claro off white
   msg_container.style.backgroundColor = "#fdeff4"; // Rosa pastel clarinho quase branco
