@@ -297,7 +297,4 @@ body.loaded #welcome-message {
   font-size: 1.2rem;
   transition: opacity 1s ease-in-out;
   opacity: 0;
-
-@import url('https://fonts.googleapis.com/css2?family=Softness+Axis&display=swap');
 }
-
