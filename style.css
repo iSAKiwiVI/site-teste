@@ -30,6 +30,13 @@ body.loaded #welcome-message {
 
 /* Carta de Amor */
 #message-container {
+  font-family: 'Dancing Script', cursive; /* Fonte fofa */
+  text-align: justify; /* Texto justificado */
+  line-height: 1.6; /* Maior espaçamento entre linhas */
+  font-size: 1.2rem; /* Tamanho de fonte ajustado */
+  height: 400px; /* Altura máxima ajustada */
+  max-height: 600px; /* Ajuste de altura */
+  overflow-y: scroll; /* Adiciona o scroll */
   background-color: #fdeff4;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -37,7 +44,6 @@ body.loaded #welcome-message {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 1200px; /* Aumentado de 1000px para 1200px */
   width: 95%; /* Ajustado de 90% para 95% */
-  height: 100px; /* Certifique-se de que o valor esteja correto */
   opacity: 0;
   overflow: hidden;
   transition: all 1.5s ease-in-out;
