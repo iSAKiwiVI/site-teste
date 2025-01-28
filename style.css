@@ -1,0 +1,302 @@
+/* Fundo do site */
+body {
+  font-family: 'Softness Axis', sans-serif; /* Fonte Softness Axis */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5e6f3;  /* Cor de fundo */
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Mensagem de Boas-Vindas */
+#welcome-message {
+  font-size: 2rem;
+  color: #c084fc;
+  font-weight: bold;
+  margin-bottom: 20px;
+  opacity: 0;
+  transition: opacity 2s ease;
+}
+
+body.loaded #welcome-message {
+  opacity: 1;
+}
+
+/* Carta de Amor */
+#message-container {
+  background-color: #fdeff4;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 1200px; /* Aumentado de 1000px para 1200px */
+  width: 95%; /* Ajustado de 90% para 95% */
+  height: auto; /* Mudança aqui para permitir que o container ajuste sua altura conforme o conteúdo */
+  opacity: 0;
+  overflow: auto; /* Agora a caixa de texto pode rolar caso o conteúdo seja muito grande */
+  transition: all 1.5s ease-in-out;
+  transform: rotateX(5deg);
+  z-index: 10; /* Prioridade alta */
+  word-wrap: break-word; /* Garante que o texto será quebrado e continuará visível sem ultrapassar os limites */
+  font-family: 'Softness Axis', sans-serif; /* Fonte mais fofa: Softness Axis */
+  text-align: center; /* Centraliza o texto dentro da caixa */
+  padding: 30px; /* Aumentei o padding para dar um visual mais espaçado */
+}
+
+/* Coração (Prioridade Alta) */
+.heart-container {
+  text-align: center;
+  z-index: 10; /* Prioridade alta */
+  margin-top: 20px;
+}
+
+.heart-container i {
+  font-size: 3rem;
+  color: #c084fc;
+  cursor: pointer;
+  text-shadow: 0 0 10px #d3aefb, 0 0 20px #d3aefb, 0 0 30px #d3aefb;
+  animation: neon-flicker 1.5s infinite alternate, heart-bounce 1s ease-in-out;
+}
+
+/* Animação do brilho neon */
+@keyframes neon-flicker {
+  0%, 100% {
+    text-shadow: 0 0 5px #d3aefb, 0 0 10px #d3aefb, 0 0 20px #d3aefb;
+  }
+  50% {
+    text-shadow: 0 0 15px #d3aefb, 0 0 30px #d3aefb, 0 0 45px #d3aefb;
+  }
+}
+
+/* Animação de rebote do coração */
+@keyframes heart-bounce {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Confetes */
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #c084fc; /* Roxo */
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: explodeConfetti 3s forwards, rotateConfetti 2s linear infinite;
+  z-index: 999;
+}
+
+/* Animação de dispersão dos confetes (Explosão) */
+@keyframes explodeConfetti {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(var(--x), var(--y)) rotate(720deg);
+    opacity: 0;
+  }
+}
+
+/* Animação de rotação dos confetes */
+@keyframes rotateConfetti {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Scrapbook (Adesivos e bilhetes flutuantes) */
+.scrapbook-element {
+  position: absolute;
+  font-size: 2rem;
+  opacity: 0.8;
+  animation: float 6s ease-in-out infinite;
+}
+
+#sticker-1 {
+  top: 10%;
+  left: 20%;
+  animation-delay: 0s;
+}
+
+#sticker-2 {
+  top: 50%;
+  left: 40%;
+  animation-delay: 1s;
+}
+
+#sticker-3 {
+  top: 30%;
+  left: 60%;
+  animation-delay: 2s;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+}
+
+/* Nuvens de Algodão Doce */
+.cloud {
+  position: absolute;
+  background-color: #fff;
+  width: 120px;
+  height: 80px;
+  border-radius: 50%;
+  box-shadow: 30px 0 0 0 #fff, 60px 0 0 0 #fff, 90px 0 0 0 #fff;
+  opacity: 0.8;
+  animation: move-cloud 40s linear infinite;
+  z-index: 5;
+}
+
+.cloud-light-pink {
+  background-color: #f6d6d6;
+}
+
+.cloud-light-blue {
+  background-color: #d3f0f6;
+}
+
+@keyframes move-cloud {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Corações Coloridos (Neon Pastel) */
+.heart {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-color: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+  animation: move-heart 15s ease-in infinite;
+  opacity: 0.6;
+  z-index: 3;
+}
+
+.heart-lilac {
+  background-color: #d3aefb;
+  animation-duration: 12s;
+}
+
+.heart-pink {
+  background-color: #f6c6e1;
+  animation-duration: 14s;
+}
+
+.heart-yellow {
+  background-color: #f6e06d;
+  animation-duration: 16s;
+}
+
+@keyframes move-heart {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(200px) translateX(100px);
+  }
+  100% {
+    transform: translateY(0) translateX(200px);
+  }
+}
+
+/* Estrelas piscando */
+@keyframes twinkle {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+.star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: twinkle 2s infinite ease-in-out;
+  z-index: 1;
+}
+
+.star-1 {
+  top: 10%;
+  left: 15%;
+  animation-delay: 0s;
+}
+
+.star-2 {
+  top: 20%;
+  left: 30%;
+  animation-delay: 1s;
+}
+
+.star-3 {
+  top: 30%;
+  left: 50%;
+  animation-delay: 2s;
+}
+
+.star-4 {
+  top: 40%;
+  left: 70%;
+  animation-delay: 3s;
+}
+
+.star-5 {
+  top: 50%;
+  left: 85%;
+  animation-delay: 4s;
+}
+
+/* Estilo da citação */
+#quote {
+  font-style: italic;
+  color: #9a5bdb;
+  margin-top: 40px;
+  font-size: 1.2rem;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Softness+Axis&display=swap');
