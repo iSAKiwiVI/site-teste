@@ -1,6 +1,9 @@
+/* Carregar a fonte SOFT */
+@import url('https://fonts.googleapis.com/css2?family=Softness+Axis&display=swap');
+
 /* Fundo do site */
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Softness Axis', sans-serif; /* Fonte Softness Axis */
   margin: 0;
   padding: 0;
   display: flex;
@@ -30,13 +33,6 @@ body.loaded #welcome-message {
 
 /* Carta de Amor */
 #message-container {
-  font-family: 'Dancing Script', cursive; /* Fonte fofa */
-  text-align: justify; /* Texto justificado */
-  line-height: 1.6; /* Maior espaçamento entre linhas */
-  font-size: 1.2rem; /* Tamanho de fonte ajustado */
-  height: 400px; /* Altura máxima ajustada */
-  max-height: 600px; /* Ajuste de altura */
-  overflow-y: scroll; /* Adiciona o scroll */
   background-color: #fdeff4;
   border: 1px solid #ccc;
   border-radius: 10px;
@@ -44,11 +40,16 @@ body.loaded #welcome-message {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 1200px; /* Aumentado de 1000px para 1200px */
   width: 95%; /* Ajustado de 90% para 95% */
+  height: auto; /* Mudança aqui para permitir que o container ajuste sua altura conforme o conteúdo */
   opacity: 0;
-  overflow: hidden;
+  overflow: auto; /* Agora a caixa de texto pode rolar caso o conteúdo seja muito grande */
   transition: all 1.5s ease-in-out;
   transform: rotateX(5deg);
   z-index: 10; /* Prioridade alta */
+  word-wrap: break-word; /* Garante que o texto será quebrado e continuará visível sem ultrapassar os limites */
+  font-family: 'Softness Axis', sans-serif; /* Fonte mais fofa: Softness Axis */
+  text-align: center; /* Centraliza o texto dentro da caixa */
+  padding: 30px; /* Aumentei o padding para dar um visual mais espaçado */
 }
 
 /* Coração (Prioridade Alta) */
